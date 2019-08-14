@@ -4104,6 +4104,7 @@ defmodule Explorer.Chain do
 
     query
     |> join_associations(necessity_by_association)
+    |> preload(:contract_address)
     |> Repo.one()
     |> case do
       nil ->
