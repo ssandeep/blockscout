@@ -66,6 +66,8 @@ defmodule BlockScoutWeb.Schema.Types do
     field(:total_difficulty, :decimal)
     field(:miner_hash, :address_hash)
     field(:parent_hash, :full_hash)
+    field(:transactions_root, :full_hash)
+    field(:receipts_root, :full_hash)
   end
 
   @desc """

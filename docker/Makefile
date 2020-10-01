@@ -10,7 +10,7 @@ ifeq ($(SYSTEM), Linux)
 	HOST=localhost
 endif
 
-DB_URL = postgresql://postgres:@$(HOST):5432/explorer?ssl=false
+DB_URL = postgresql://postgres:@$(HOST):5442/explorer?ssl=false
 BLOCKSCOUT_CONTAINER_PARAMS = -e 'MIX_ENV=prod' \
 															 -e 'DATABASE_URL=$(DB_URL)'
 ifeq ($(SYSTEM), Linux)
@@ -263,7 +263,7 @@ else
 	@docker run -d --name $(PG_CONTAINER_NAME) \
 					-e POSTGRES_PASSWORD="" \
 					-e POSTGRES_USER="postgres" \
-					-p 5432:5432 \
+					-p 5442:5432 \
 					$(PG_CONTAINER_IMAGE)
 	@sleep 1
 	@$(MAKE) -f $(THIS_FILE) migrate
