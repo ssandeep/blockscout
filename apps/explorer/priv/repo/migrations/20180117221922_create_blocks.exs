@@ -15,6 +15,10 @@ defmodule Explorer.Repo.Migrations.CreateBlocks do
       # not a foreign key to allow skipped blocks
       add(:parent_hash, :bytea, null: false)
 
+      # adding txRoot and recRoot
+      add(:transactions_root, :bytea)
+      add(:receipts_root, :bytea)
+
       add(:size, :integer, null: false)
       add(:timestamp, :utc_datetime_usec, null: false)
       add(:total_difficulty, :numeric, precision: 50)
