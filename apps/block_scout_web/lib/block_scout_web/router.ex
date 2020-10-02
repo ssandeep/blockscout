@@ -4,7 +4,10 @@ defmodule BlockScoutWeb.Router do
   alias BlockScoutWeb.Plug.GraphQL
   alias BlockScoutWeb.{ApiRouter, WebRouter}
 
-  forward("/wobserver", Wobserver.Web.Router)
+  if Application.get_env(:block_scout_web, ApiRouter)[:wobserver_enabled] do
+    forward("/wobserver", Wobserver.Web.Router)
+  end
+
   forward("/admin", BlockScoutWeb.AdminRouter)
 
   pipeline :browser do
@@ -54,10 +57,22 @@ defmodule BlockScoutWeb.Router do
     get("/eth_rpc_api_docs", APIDocsController, :eth_rpc)
   end
 
-  scope "/verify_smart_contract" do
-    pipe_through(:api)
+  url_params = Application.get_env(:block_scout_web, BlockScoutWeb.Endpoint)[:url]
+  api_path = url_params[:api_path]
+  path = url_params[:path]
 
-    post("/contract_verifications", BlockScoutWeb.AddressContractVerificationController, :create)
+  if path != api_path do
+    scope to_string(api_path) <> "/verify_smart_contract" do
+      pipe_through(:api)
+
+      post("/contract_verifications", BlockScoutWeb.AddressContractVerificationController, :create)
+    end
+  else
+    scope "/verify_smart_contract" do
+      pipe_through(:api)
+
+      post("/contract_verifications", BlockScoutWeb.AddressContractVerificationController, :create)
+    end
   end
 
   if Application.get_env(:block_scout_web, WebRouter)[:enabled] do
