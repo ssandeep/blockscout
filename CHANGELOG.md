@@ -1,10 +1,14 @@
 ## Current
 
-### Features
-
 ### Fixes
 
 ### Chore
+
+
+## 3.3.3-alpha
+
+### Features
+- [#2842](https://github.com/poanetwork/blockscout/pull/2842) - save transactions_root, state_root, receipts_root to block
 
 
 ## 3.3.2-beta
