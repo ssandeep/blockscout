@@ -444,7 +444,7 @@ msgid "Copy Txn Hash"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:58
+#: lib/block_scout_web/templates/block/overview.html.eex:82
 msgid "Difficulty"
 msgstr ""
 
@@ -606,7 +606,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:38
-#: lib/block_scout_web/templates/block/overview.html.eex:124
+#: lib/block_scout_web/templates/block/overview.html.eex:148
 #: lib/block_scout_web/templates/chain/_block.html.eex:15
 msgid "Miner"
 msgstr ""
@@ -718,7 +718,7 @@ msgid "GET"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:84
+#: lib/block_scout_web/templates/block/overview.html.eex:108
 msgid "Position %{index}"
 msgstr ""
 
@@ -913,7 +913,7 @@ msgid "Top Accounts - %{subnetwork} Explorer"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:67
+#: lib/block_scout_web/templates/block/overview.html.eex:91
 msgid "Total Difficulty"
 msgstr ""
 
@@ -1144,7 +1144,7 @@ msgid "Parameters"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:43
+#: lib/block_scout_web/templates/block/overview.html.eex:67
 msgid "Parent Hash"
 msgstr ""
 
