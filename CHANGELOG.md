@@ -1,7 +1,5 @@
 ## Current
 
-### Features
-
 ### Fixes
 
 ### Chore
